@@ -1,0 +1,26 @@
+.wp-block-wp-atlas-info-card {
+	&__image-wrapper {
+		position: relative;
+	}
+
+	&__image-wrapper img {
+		cursor: pointer;
+	}
+
+	&__image-remove {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+	}
+
+	&__image-upload {
+		width: 100%;
+		min-height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px dashed #ccc;
+		border-radius: 8px 8px 0 0;
+		background: #f9f9f9;
+	}
+}

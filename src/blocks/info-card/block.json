@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wp-atlas/info-card",
+  "version": "0.1.0",
+  "title": "Info Card",
+  "category": "common",
+  "icon": "id-alt",
+  "description": "An informational card with an image, title, text, and a call-to-action button.",
+  "textdomain": "wp-atlas",
+  "attributes": {
+    "mediaId": {
+      "type": "number"
+    },
+    "mediaUrl": {
+      "type": "string"
+    },
+    "mediaAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": ".wp-block-wp-atlas-info-card__title"
+    },
+    "text": {
+      "type": "string",
+      "source": "html",
+      "selector": ".wp-block-wp-atlas-info-card__text"
+    },
+    "buttonText": {
+      "type": "string",
+      "source": "html",
+      "selector": ".wp-block-wp-atlas-info-card__button"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonOpenInNewTab": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "supports": {
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    },
+    "typography": {
+      "fontSize": true
+    }
+  }
+}
