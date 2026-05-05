@@ -29,6 +29,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		buttonText,
 		buttonUrl,
 		buttonOpenInNewTab,
+		elevateOnHover,
 	} = attributes;
 
 	const titleTag = `h${ titleLevel }`;
@@ -68,6 +69,15 @@ export default function Edit( { attributes, setAttributes } ) {
 			</BlockControls>
 
 			<InspectorControls>
+				<PanelBody title={ __( 'Effects', 'wp-atlas' ) }>
+					<ToggleControl
+						label={ __( 'Elevate on hover', 'wp-atlas' ) }
+						checked={ elevateOnHover }
+						onChange={ ( value ) =>
+							setAttributes( { elevateOnHover: value } )
+						}
+					/>
+				</PanelBody>
 				<PanelBody title={ __( 'Button Settings', 'wp-atlas' ) }>
 					<TextControl
 						label={ __( 'Button URL', 'wp-atlas' ) }
@@ -86,7 +96,11 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div { ...useBlockProps() }>
+			<div { ...useBlockProps( {
+				className: elevateOnHover
+					? 'has-elevate-on-hover'
+					: '',
+			} ) }>
 				<div className="wp-block-wp-atlas-info-card__image">
 					<MediaUploadCheck>
 						<MediaUpload

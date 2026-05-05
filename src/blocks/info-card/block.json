@@ -49,6 +49,10 @@
     "buttonOpenInNewTab": {
       "type": "boolean",
       "default": false
+    },
+    "elevateOnHover": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": "file:./index.js",

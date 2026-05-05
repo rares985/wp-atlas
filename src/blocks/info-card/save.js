@@ -11,12 +11,17 @@ export default function save( { attributes } ) {
 		buttonText,
 		buttonUrl,
 		buttonOpenInNewTab,
+		elevateOnHover,
 	} = attributes;
 
 	const titleTag = `h${ titleLevel }`;
 
 	return (
-		<div { ...useBlockProps.save() }>
+		<div { ...useBlockProps.save( {
+			className: elevateOnHover
+				? 'has-elevate-on-hover'
+				: '',
+		} ) }>
 			{ mediaUrl && (
 				<div className="wp-block-wp-atlas-info-card__image">
 					<img src={ mediaUrl } alt={ mediaAlt } />
