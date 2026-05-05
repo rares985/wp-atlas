@@ -10,11 +10,15 @@
     "start": "wp-scripts start",
     "lint:js": "wp-scripts lint-js",
     "lint:css": "wp-scripts lint-style",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "pnpm lint:js && pnpm lint:css",
     "format": "wp-scripts format",
-    "packages-update": "wp-scripts packages-update"
+    "packages-update": "wp-scripts packages-update",
+    "env:start": "wp-env start",
+    "env:stop": "wp-env stop",
+    "env:destroy": "wp-env destroy"
   },
   "devDependencies": {
+    "@wordpress/env": "^10.0.0",
     "@wordpress/scripts": "^30.0.0"
   }
 }
