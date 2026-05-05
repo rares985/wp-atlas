@@ -9,6 +9,9 @@
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       wp-atlas
+ * GitHub Plugin URI: rares985/wp-atlas
+ * Primary Branch:    main
+ * Release Asset:     true
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
