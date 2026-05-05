@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-atlas/testimonial",
+	"version": "1.0.0",
+	"title": "Testimonial",
+	"category": "widgets",
+	"icon": "format-quote",
+	"description": "A testimonial card with client photo, name, role, quote, and star rating.",
+	"keywords": [ "testimonial", "review", "quote", "rating", "stars" ],
+	"attributes": {
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string"
+		},
+		"mediaAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"clientName": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-testimonial__name"
+		},
+		"clientRole": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-testimonial__role"
+		},
+		"testimonialText": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-testimonial__text"
+		},
+		"rating": {
+			"type": "number",
+			"default": 5
+		},
+		"contentAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"elevateOnHover": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"width": true,
+			"style": true
+		}
+	},
+	"textdomain": "wp-atlas",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
