@@ -7,6 +7,7 @@ import {
 	BlockControls,
 	InspectorControls,
 	HeadingLevelDropdown,
+	AlignmentControl,
 } from '@wordpress/block-editor';
 import {
 	Button,
@@ -21,6 +22,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		mediaId,
 		mediaUrl,
 		mediaAlt,
+		contentAlign,
 		titleLevel,
 		title,
 		text,
@@ -50,6 +52,12 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<BlockControls group="block">
+				<AlignmentControl
+					value={ contentAlign }
+					onChange={ ( value ) =>
+						setAttributes( { contentAlign: value } )
+					}
+				/>
 				<HeadingLevelDropdown
 					value={ titleLevel }
 					onChange={ ( value ) =>
@@ -116,7 +124,10 @@ export default function Edit( { attributes, setAttributes } ) {
 					</MediaUploadCheck>
 				</div>
 
-				<div className="wp-block-wp-atlas-info-card__content">
+				<div
+					className="wp-block-wp-atlas-info-card__content"
+					style={ { textAlign: contentAlign } }
+				>
 					<RichText
 						tagName={ titleTag }
 						className="wp-block-wp-atlas-info-card__title"

@@ -4,6 +4,7 @@ export default function save( { attributes } ) {
 	const {
 		mediaUrl,
 		mediaAlt,
+		contentAlign,
 		titleLevel,
 		title,
 		text,
@@ -22,7 +23,10 @@ export default function save( { attributes } ) {
 				</div>
 			) }
 
-			<div className="wp-block-wp-atlas-info-card__content">
+			<div
+				className="wp-block-wp-atlas-info-card__content"
+				style={ { textAlign: contentAlign } }
+			>
 				<RichText.Content
 					tagName={ titleTag }
 					className="wp-block-wp-atlas-info-card__title"

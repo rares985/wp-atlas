@@ -19,6 +19,10 @@
       "type": "string",
       "default": ""
     },
+    "contentAlign": {
+      "type": "string",
+      "default": "left"
+    },
     "titleLevel": {
       "type": "number",
       "default": 3
