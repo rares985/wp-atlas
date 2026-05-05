@@ -35,7 +35,7 @@ export default function save( { attributes } ) {
 				/>
 				{ buttonText && (
 					<a
-						className="wp-block-wp-atlas-info-card__button"
+						className="wp-block-wp-atlas-info-card__button wp-element-button"
 						href={ buttonUrl || '#' }
 						{ ...( buttonOpenInNewTab
 							? { target: '_blank', rel: 'noopener noreferrer' }

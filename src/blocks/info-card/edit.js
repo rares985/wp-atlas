@@ -140,7 +140,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 					<RichText
 						tagName="span"
-						className="wp-block-wp-atlas-info-card__button"
+						className="wp-block-wp-atlas-info-card__button wp-element-button"
 						placeholder={ __( 'Button text…', 'wp-atlas' ) }
 						value={ buttonText }
 						onChange={ ( value ) =>
