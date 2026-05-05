@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wp-atlas/example",
+  "version": "0.1.0",
+  "title": "Example",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "An example block to verify the build pipeline works.",
+  "textdomain": "wp-atlas",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "supports": {
+    "html": false
+  }
+}
