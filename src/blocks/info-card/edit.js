@@ -4,7 +4,9 @@ import {
 	RichText,
 	MediaUpload,
 	MediaUploadCheck,
+	BlockControls,
 	InspectorControls,
+	HeadingLevelDropdown,
 } from '@wordpress/block-editor';
 import {
 	Button,
@@ -19,12 +21,15 @@ export default function Edit( { attributes, setAttributes } ) {
 		mediaId,
 		mediaUrl,
 		mediaAlt,
+		titleLevel,
 		title,
 		text,
 		buttonText,
 		buttonUrl,
 		buttonOpenInNewTab,
 	} = attributes;
+
+	const titleTag = `h${ titleLevel }`;
 
 	const onSelectMedia = ( media ) => {
 		setAttributes( {
@@ -44,6 +49,15 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
+			<BlockControls group="block">
+				<HeadingLevelDropdown
+					value={ titleLevel }
+					onChange={ ( value ) =>
+						setAttributes( { titleLevel: value } )
+					}
+				/>
+			</BlockControls>
+
 			<InspectorControls>
 				<PanelBody title={ __( 'Button Settings', 'wp-atlas' ) }>
 					<TextControl
@@ -104,7 +118,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 				<div className="wp-block-wp-atlas-info-card__content">
 					<RichText
-						tagName="h3"
+						tagName={ titleTag }
 						className="wp-block-wp-atlas-info-card__title"
 						placeholder={ __( 'Card title…', 'wp-atlas' ) }
 						value={ title }

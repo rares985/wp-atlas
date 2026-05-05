@@ -19,6 +19,10 @@
       "type": "string",
       "default": ""
     },
+    "titleLevel": {
+      "type": "number",
+      "default": 3
+    },
     "title": {
       "type": "string",
       "source": "html",

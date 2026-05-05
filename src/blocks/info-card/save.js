@@ -4,12 +4,15 @@ export default function save( { attributes } ) {
 	const {
 		mediaUrl,
 		mediaAlt,
+		titleLevel,
 		title,
 		text,
 		buttonText,
 		buttonUrl,
 		buttonOpenInNewTab,
 	} = attributes;
+
+	const titleTag = `h${ titleLevel }`;
 
 	return (
 		<div { ...useBlockProps.save() }>
@@ -21,7 +24,7 @@ export default function save( { attributes } ) {
 
 			<div className="wp-block-wp-atlas-info-card__content">
 				<RichText.Content
-					tagName="h3"
+					tagName={ titleTag }
 					className="wp-block-wp-atlas-info-card__title"
 					value={ title }
 				/>
