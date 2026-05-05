@@ -62,6 +62,12 @@
     },
     "typography": {
       "fontSize": true
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "width": true,
+      "style": true
     }
   }
 }
