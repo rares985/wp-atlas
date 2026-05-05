@@ -53,6 +53,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		<>
 			<BlockControls group="block">
 				<AlignmentControl
+					label={ __( 'Align content', 'wp-atlas' ) }
 					value={ contentAlign }
 					onChange={ ( value ) =>
 						setAttributes( { contentAlign: value } )
