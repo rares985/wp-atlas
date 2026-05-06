@@ -1,0 +1,10 @@
+.wp-block-wp-atlas-pricing {
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: grid;
+		grid-template-columns: repeat(
+			var(--wp-atlas-pricing-columns, 3),
+			1fr
+		);
+		gap: 1.5rem;
+	}
+}

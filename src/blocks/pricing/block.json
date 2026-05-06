@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-atlas/pricing",
+	"version": "0.1.0",
+	"title": "Pricing",
+	"category": "design",
+	"icon": "money-alt",
+	"description": "Display a set of pricing cards.",
+	"keywords": [ "pricing", "price", "plans", "cards" ],
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"accentColor": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

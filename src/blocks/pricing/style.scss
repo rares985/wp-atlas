@@ -1,0 +1,5 @@
+.wp-block-wp-atlas-pricing {
+	display: grid;
+	grid-template-columns: repeat(var(--wp-atlas-pricing-columns, 3), 1fr);
+	gap: 1.5rem;
+}

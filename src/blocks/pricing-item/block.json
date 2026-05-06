@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-atlas/pricing-item",
+	"version": "0.1.0",
+	"title": "Pricing Item",
+	"category": "design",
+	"icon": "tag",
+	"description": "A single pricing card within a pricing block.",
+	"parent": [ "wp-atlas/pricing" ],
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-item__title"
+		},
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-item__description"
+		},
+		"price": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-item__price"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
