@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       WP Atlas
  * Description:       A collection of reusable WordPress blocks.
- * Version:           0.6.1
+ * Version:           0.6.2
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Rares Mateizer
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WP_ATLAS_VERSION', '0.6.1' );
+define( 'WP_ATLAS_VERSION', '0.6.2' );
 define( 'WP_ATLAS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WP_ATLAS_URL', plugin_dir_url( __FILE__ ) );
 
