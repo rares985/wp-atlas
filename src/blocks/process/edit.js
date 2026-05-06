@@ -5,6 +5,10 @@ import {
 	InspectorControls,
 	PanelColorSettings,
 } from '@wordpress/block-editor';
+import {
+	PanelBody,
+	SelectControl,
+} from '@wordpress/components';
 
 import './editor.scss';
 
@@ -15,7 +19,7 @@ const TEMPLATE = [
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { circleColor, circleTextColor, lineColor } = attributes;
+	const { headingLevel, circleColor, circleTextColor, lineColor } = attributes;
 
 	const style = {
 		'--wp-atlas-process-circle-color': circleColor,
@@ -33,6 +37,24 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls>
+				<PanelBody title={ __( 'Step title' ) }>
+					<SelectControl
+						label={ __( 'Heading level' ) }
+						value={ headingLevel }
+						options={ [
+							{ label: __( 'H2' ), value: 2 },
+							{ label: __( 'H3' ), value: 3 },
+							{ label: __( 'H4' ), value: 4 },
+							{ label: __( 'H5' ), value: 5 },
+							{ label: __( 'H6' ), value: 6 },
+						] }
+						onChange={ ( value ) =>
+							setAttributes( {
+								headingLevel: Number( value ),
+							} )
+						}
+					/>
+				</PanelBody>
 				<PanelColorSettings
 					title={ __( 'Timeline colors' ) }
 					colorSettings={ [

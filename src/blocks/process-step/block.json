@@ -8,11 +8,16 @@
 	"icon": "marker",
 	"description": "A single step within a process timeline.",
 	"parent": [ "wp-atlas/process" ],
+	"usesContext": [ "wp-atlas/headingLevel" ],
 	"supports": {
 		"html": false,
 		"reusable": false
 	},
 	"attributes": {
+		"headingLevel": {
+			"type": "number",
+			"default": 4
+		},
 		"title": {
 			"type": "string",
 			"source": "html",
