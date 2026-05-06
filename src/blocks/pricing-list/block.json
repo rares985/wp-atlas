@@ -49,6 +49,10 @@
 		},
 		"separatorColor": {
 			"type": "string"
+		},
+		"elevateOnHover": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

@@ -1,7 +1,7 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
-	const { heading, description, mediaUrl, mediaAlt, imagePosition, imageHeight, contentPadding, separatorColor, anchor } =
+	const { heading, description, mediaUrl, mediaAlt, imagePosition, imageHeight, contentPadding, separatorColor, anchor, elevateOnHover } =
 		attributes;
 
 	const style = {};
@@ -13,6 +13,7 @@ export default function save( { attributes } ) {
 	}
 	const blockProps = useBlockProps.save( {
 		style: Object.keys( style ).length ? style : undefined,
+		className: elevateOnHover ? 'has-elevate-on-hover' : '',
 	} );
 
 	const imageElement = mediaUrl ? (

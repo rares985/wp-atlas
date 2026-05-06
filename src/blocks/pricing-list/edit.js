@@ -13,6 +13,7 @@ import {
 	PanelBody,
 	SelectControl,
 	RangeControl,
+	ToggleControl,
 } from '@wordpress/components';
 
 import './editor.scss';
@@ -30,7 +31,7 @@ const IMAGE_POSITION_OPTIONS = [
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { heading, description, mediaId, mediaUrl, mediaAlt, imagePosition, imageHeight, contentPadding, separatorColor, anchor } =
+	const { heading, description, mediaId, mediaUrl, mediaAlt, imagePosition, imageHeight, contentPadding, separatorColor, anchor, elevateOnHover } =
 		attributes;
 
 	const style = {};
@@ -42,6 +43,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	}
 	const blockProps = useBlockProps( {
 		style: Object.keys( style ).length ? style : undefined,
+		className: elevateOnHover ? 'has-elevate-on-hover' : '',
 	} );
 	const innerBlocksProps = useInnerBlocksProps(
 		{ className: 'wp-block-wp-atlas-pricing-list__items' },
@@ -135,6 +137,15 @@ export default function Edit( { attributes, setAttributes } ) {
 						},
 					] }
 				/>
+				<PanelBody title={ __( 'Effects' ) }>
+					<ToggleControl
+						label={ __( 'Elevate on hover' ) }
+						checked={ elevateOnHover }
+						onChange={ ( value ) =>
+							setAttributes( { elevateOnHover: value } )
+						}
+					/>
+				</PanelBody>
 				<PanelBody title={ __( 'Image' ) }>
 					<SelectControl
 						label={ __( 'Image position' ) }
