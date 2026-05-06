@@ -1,0 +1,12 @@
+.wp-block-wp-atlas-post-query {
+
+	&__spinner {
+		display: flex;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	&__empty {
+		min-height: 200px;
+	}
+}

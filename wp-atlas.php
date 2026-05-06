@@ -22,6 +22,8 @@ define( 'WP_ATLAS_VERSION', '0.6.2' );
 define( 'WP_ATLAS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WP_ATLAS_URL', plugin_dir_url( __FILE__ ) );
 
+require_once WP_ATLAS_DIR . 'includes/render-post-card.php';
+
 function wp_atlas_register_blocks() {
 	$build_dir = WP_ATLAS_DIR . 'build/blocks/';
 
