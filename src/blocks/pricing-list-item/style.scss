@@ -1,0 +1,38 @@
+.wp-block-wp-atlas-pricing-list-item {
+	padding: 0.6rem 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&__row {
+		display: flex;
+		align-items: baseline;
+		gap: 0.75rem;
+	}
+
+	&__service {
+		font-weight: 500;
+	}
+
+	&__separator {
+		flex: 1;
+		border-bottom: 2px dotted rgba(0, 0, 0, 0.15);
+		min-width: 2rem;
+		position: relative;
+		top: -0.25em;
+	}
+
+	&__price {
+		font-weight: 700;
+		white-space: nowrap;
+	}
+
+	&__description {
+		margin: 0.25rem 0 0;
+		font-size: 0.875em;
+		opacity: 0.65;
+		line-height: 1.5;
+	}
+}

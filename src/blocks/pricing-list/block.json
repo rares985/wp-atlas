@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-atlas/pricing-list",
+	"version": "0.1.0",
+	"title": "Pricing List",
+	"category": "design",
+	"icon": "list-view",
+	"description": "Display a list of services with prices.",
+	"keywords": [ "pricing", "price", "services", "menu", "list" ],
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-list__heading"
+		},
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-list__description"
+		},
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-wp-atlas-pricing-list__image",
+			"attribute": "src"
+		},
+		"mediaAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-wp-atlas-pricing-list__image",
+			"attribute": "alt",
+			"default": ""
+		},
+		"imagePosition": {
+			"type": "string",
+			"default": "before-title"
+		},
+		"imageHeight": {
+			"type": "number",
+			"default": 200
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

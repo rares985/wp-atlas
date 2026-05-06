@@ -1,0 +1,36 @@
+.wp-block-wp-atlas-pricing-list {
+	&__heading,
+	&__description {
+		cursor: text;
+	}
+
+	&__image {
+		cursor: pointer;
+	}
+
+	&__image-wrapper {
+		position: relative;
+	}
+
+	&__image-remove {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		min-width: 1.5rem;
+		height: 1.5rem;
+		padding: 0;
+		border-radius: 50%;
+		line-height: 1;
+	}
+
+	&__image-upload {
+		width: 100%;
+		height: 6rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px dashed rgba(0, 0, 0, 0.15);
+		border-radius: 0.5rem;
+		margin-bottom: 1rem;
+	}
+}

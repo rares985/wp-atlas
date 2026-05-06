@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-atlas/pricing-list-item",
+	"version": "0.1.0",
+	"title": "Pricing List Item",
+	"category": "design",
+	"icon": "tag",
+	"description": "A single service and price row within a pricing list.",
+	"parent": [ "wp-atlas/pricing-list" ],
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"color": {
+			"background": true,
+			"text": true
+		}
+	},
+	"attributes": {
+		"service": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-list-item__service"
+		},
+		"price": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-list-item__price"
+		},
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-pricing-list-item__description"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
