@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-atlas/process-step",
+	"version": "0.1.0",
+	"title": "Process Step",
+	"category": "design",
+	"icon": "marker",
+	"description": "A single step within a process timeline.",
+	"parent": [ "wp-atlas/process" ],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-process-step__title"
+		},
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-wp-atlas-process-step__description"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
