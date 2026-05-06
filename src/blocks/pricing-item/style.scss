@@ -9,10 +9,7 @@
 		font-size: 2.5rem;
 		font-weight: 700;
 		line-height: 1.1;
-		color: var(
-			--wp-atlas-pricing-accent-color,
-			var(--wp--preset--color--contrast, #1e1e1e)
-		);
+		color: var(--wp-atlas-pricing-accent-color, currentColor);
 	}
 
 	&__title {
