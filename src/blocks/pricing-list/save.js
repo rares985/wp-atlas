@@ -1,9 +1,19 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
-	const { heading, description, mediaUrl, mediaAlt, imagePosition, imageHeight } =
+	const { heading, description, mediaUrl, mediaAlt, imagePosition, imageHeight, contentPadding, separatorColor, anchor } =
 		attributes;
-	const blockProps = useBlockProps.save();
+
+	const style = {};
+	if ( contentPadding ) {
+		style[ '--wp-atlas-pricing-list-padding' ] = `${ contentPadding }px`;
+	}
+	if ( separatorColor ) {
+		style[ '--wp-atlas-pricing-list-separator-color' ] = separatorColor;
+	}
+	const blockProps = useBlockProps.save( {
+		style: Object.keys( style ).length ? style : undefined,
+	} );
 
 	const imageElement = mediaUrl ? (
 		<img
@@ -22,6 +32,7 @@ export default function save( { attributes } ) {
 					tagName="h3"
 					className="wp-block-wp-atlas-pricing-list__heading"
 					value={ heading }
+					id={ anchor }
 				/>
 			) }
 			{ imagePosition === 'after-title' && imageElement }

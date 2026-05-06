@@ -42,16 +42,23 @@
 		"imageHeight": {
 			"type": "number",
 			"default": 200
+		},
+		"contentPadding": {
+			"type": "number",
+			"default": 0
+		},
+		"separatorColor": {
+			"type": "string"
 		}
 	},
 	"supports": {
 		"html": false,
+		"anchor": true,
 		"color": {
 			"background": true,
 			"text": true
 		},
 		"spacing": {
-			"padding": true,
 			"margin": true
 		},
 		"typography": {

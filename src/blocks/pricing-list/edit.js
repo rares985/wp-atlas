@@ -6,6 +6,7 @@ import {
 	MediaUpload,
 	MediaUploadCheck,
 	InspectorControls,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
 import {
 	Button,
@@ -29,9 +30,19 @@ const IMAGE_POSITION_OPTIONS = [
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { heading, description, mediaId, mediaUrl, mediaAlt, imagePosition, imageHeight } =
+	const { heading, description, mediaId, mediaUrl, mediaAlt, imagePosition, imageHeight, contentPadding, separatorColor, anchor } =
 		attributes;
-	const blockProps = useBlockProps();
+
+	const style = {};
+	if ( contentPadding ) {
+		style[ '--wp-atlas-pricing-list-padding' ] = `${ contentPadding }px`;
+	}
+	if ( separatorColor ) {
+		style[ '--wp-atlas-pricing-list-separator-color' ] = separatorColor;
+	}
+	const blockProps = useBlockProps( {
+		style: Object.keys( style ).length ? style : undefined,
+	} );
 	const innerBlocksProps = useInnerBlocksProps(
 		{ className: 'wp-block-wp-atlas-pricing-list__items' },
 		{
@@ -101,6 +112,29 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls>
+				<PanelBody title={ __( 'Layout' ) }>
+					<RangeControl
+						label={ __( 'Content padding' ) }
+						value={ contentPadding }
+						onChange={ ( value ) =>
+							setAttributes( { contentPadding: value } )
+						}
+						min={ 0 }
+						max={ 60 }
+						step={ 4 }
+					/>
+				</PanelBody>
+				<PanelColorSettings
+					title={ __( 'List colors' ) }
+					colorSettings={ [
+						{
+							value: separatorColor,
+							onChange: ( value ) =>
+								setAttributes( { separatorColor: value } ),
+							label: __( 'Separator dots' ),
+						},
+					] }
+				/>
 				<PanelBody title={ __( 'Image' ) }>
 					<SelectControl
 						label={ __( 'Image position' ) }
@@ -133,6 +167,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					}
 					placeholder={ __( 'Category heading…' ) }
 					allowedFormats={ [] }
+					id={ anchor }
 				/>
 				{ imagePosition === 'after-title' && imageElement }
 				<RichText
